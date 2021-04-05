@@ -1,0 +1,2 @@
+# WSLackware
+Slackware for WSL!
