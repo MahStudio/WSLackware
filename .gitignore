@@ -296,3 +296,4 @@ DistroLauncher/messages.h
 *.dll
 *.exe
 *.tar.gz
+src/WSLackwareLauncher/DistroLauncher/MSG00409.bin

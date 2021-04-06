@@ -27,6 +27,7 @@
     <CustomBuild Include="$(targetname)" />
     <CustomBuild Include="$(targetname)" />
     <CustomBuild Include="$(targetname)" />
+    <CustomBuild Include="$(targetname)" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Tiles\SmallTile.scale-100.png">

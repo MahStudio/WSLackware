@@ -106,7 +106,7 @@
 //
 // MessageText:
 //
-// Installing, this may take a few minutes...
+// Installing WSLackware, this may take a few minutes...
 //
 #define MSG_STATUS_INSTALLING            0x000003EEL
 
