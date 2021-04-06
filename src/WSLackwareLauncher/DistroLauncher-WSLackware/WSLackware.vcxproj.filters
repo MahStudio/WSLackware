@@ -1,33 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Common">
-      <UniqueIdentifier>f63472f9-d0a0-412e-aa3d-a4e822970486</UniqueIdentifier>
-    </Filter>
+    <CustomBuild Include="$(targetname)" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="WSLackware.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WSLackware_StoreKey.pfx" />
+    <None Include="WSLackware_TemporaryKey.pfx" />
+    <None Include="..\x64\install.tar.gz" />
+    <None Include="Package.StoreAssociation.xml" />
+  </ItemGroup>
+  <ItemGroup>
     <Filter Include="Assets">
-      <UniqueIdentifier>3cd39ea5-301d-4878-9d47-b5dbb30f6c95</UniqueIdentifier>
-      <Extensions>bmp;fbx;gif;jpg;jpeg;tga;tiff;tif;png</Extensions>
+      <UniqueIdentifier>{84a690de-be9e-4a91-bf27-b81b0f12483a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Assets\Tiles">
-      <UniqueIdentifier>{1cb2de3a-2aa6-4821-86f7-d419d86a6fca}</UniqueIdentifier>
+      <UniqueIdentifier>{b3a21e13-901f-44e8-8df8-5643102b10a2}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <AppxManifest Include="MyDistro.appxmanifest" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="DistroLauncher-Appx_TemporaryKey.pfx" />
-    <None Include="Package.StoreAssociation.xml" />
-    <None Include="DistroLauncher-Appx_StoreKey.pfx" />
-    <None Include="..\ARM64\install.tar.gz" />
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="$(targetname)" />
-    <CustomBuild Include="$(targetname)" />
-    <CustomBuild Include="$(targetname)" />
-    <CustomBuild Include="$(targetname)" />
-    <CustomBuild Include="$(targetname)" />
-    <CustomBuild Include="$(targetname)" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Tiles\SmallTile.scale-100.png">

@@ -7,23 +7,32 @@
 
 bool DistributionInfo::CreateUser(std::wstring_view userName)
 {
-    // Create the user account.
+    // Create the user account and Add the user account to any relevant groups.
     DWORD exitCode;
-    std::wstring commandLine = L"/usr/sbin/adduser --quiet --gecos '' ";
+    std::wstring commandLine = L"useradd ";
+    commandLine += userName;
+    commandLine += L" -g users -G adm,cdrom,plugdev,wheel,power,netdev,floppy,input,lp -m";
+    HRESULT hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
+    if ((FAILED(hr)) || (exitCode != 0)) {
+        return false;
+    }
+
+    //set password
+    commandLine = L"passwd ";
     commandLine += userName;
     HRESULT hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
     if ((FAILED(hr)) || (exitCode != 0)) {
         return false;
     }
 
-    // Add the user account to any relevant groups.
-    commandLine = L"/usr/sbin/usermod -aG adm,cdrom,sudo,dip,plugdev ";
+    // 
+    commandLine = L"echo \" % wheel ALL = (ALL)ALL\" >> /etc/sudoers";
     commandLine += userName;
     hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
     if ((FAILED(hr)) || (exitCode != 0)) {
 
         // Delete the user if the group add command failed.
-        commandLine = L"/usr/sbin/deluser ";
+        commandLine = L"userdel -r ";
         commandLine += userName;
         g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
         return false;
