@@ -16,7 +16,7 @@ namespace DistributionInfo
     const std::wstring Name = L"WSLackware";
 
     // The title bar for the console window while the distribution is installing.
-    const std::wstring WindowTitle = L"WSLackware";
+    const std::wstring WindowTitle = L"Slackware for Windows";
 
     // Create and configure a user account.
     bool CreateUser(std::wstring_view userName);

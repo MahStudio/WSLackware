@@ -50,7 +50,10 @@ HRESULT InstallDistribution(bool createUser)
         if (FAILED(hr)) {
             return hr;
         }
+
     }
+
+   
 
     return hr;
 }

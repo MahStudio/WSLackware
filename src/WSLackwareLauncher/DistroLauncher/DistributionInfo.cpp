@@ -20,15 +20,12 @@ bool DistributionInfo::CreateUser(std::wstring_view userName)
     //set password
     commandLine = L"passwd ";
     commandLine += userName;
-    HRESULT hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
+    hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
     if ((FAILED(hr)) || (exitCode != 0)) {
         return false;
     }
 
-    // 
-    commandLine = L"echo \" % wheel ALL = (ALL)ALL\" >> /etc/sudoers";
-    commandLine += userName;
-    hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
+   
     if ((FAILED(hr)) || (exitCode != 0)) {
 
         // Delete the user if the group add command failed.
@@ -37,6 +34,16 @@ bool DistributionInfo::CreateUser(std::wstring_view userName)
         g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
         return false;
     }
+    //set password
+    commandLine = L"cp /tmp/.bashrc /home/";
+    commandLine += userName;
+    commandLine += L"/.profile";
+    hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
+    if ((FAILED(hr)) || (exitCode != 0)) {
+        return false;
+    }
+
+    
 
     return true;
 }
