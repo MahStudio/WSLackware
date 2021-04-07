@@ -49,7 +49,7 @@ Usage:
 
 MessageId=1006 SymbolicName=MSG_STATUS_INSTALLING
 Language=English
-Installing WSLackware, this may take a few minutes...
+Installing WSLackware 14.2, this may take a few minutes...
 .
 
 MessageId=1007 SymbolicName=MSG_INSTALL_SUCCESS

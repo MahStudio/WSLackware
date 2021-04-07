@@ -36,6 +36,11 @@ HRESULT InstallDistribution(bool createUser)
         return hr;
     }
 
+    hr = g_wslApi.WslLaunchInteractive(L"echo \"%wheel ALL=(ALL) ALL\" >> /etc/sudoers", true, &exitCode);
+    if (FAILED(hr)) {
+        return hr;
+    }
+
     // Create a user account.
     if (createUser) {
         Helpers::PrintMessage(MSG_CREATE_USER_PROMPT);
