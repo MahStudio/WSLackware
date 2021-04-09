@@ -7,26 +7,28 @@
 
 # Slackware for Windows Subsystem for Linux (WSL)
 
-WSLackware is a version of Slackware optimized for Windows Subsystem for Linux on Windows 10 and Windows 10 Server.
+WSLackware is an unofficial version of Slackware for Windows Subsystem for Linux on Windows 10 and Windows 10 Server.
 
 WSLackware comes with almost no major modifications comparing to upstream Slackware and the binaries come directly from official Slackware repositories, however WSLackware it's stripped down a bit and added small tweaks to work well with WSL.
 
-WSLackware is NOT maintained and indorsed by official Slackware developers (yet) and it's supported on a community-based basis. 
+> WSLackware is NOT maintained and indorsed by official Slackware developers (yet) and it's supported on a community-based basis. 
 
 ## Installation
 
-Make sure ...
+You could use wither of this methods to install this distro on your Windows device, but first make sure:
 - [WSL is configured for your Windows 10 device](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+
+### Method 1 (App installation)
+
+Make sure:
 - Developer mode is on. For that, Go to Settings / Update and Security / For Developers -> Developer mode, then toggle it on.
 - Powershell scripts can be executed on your device. For that, Go to Settings / Update and Security / For Developers -> Powershell, select everything and apply.
-
-### Method 1 (recommended)
 
 Go to your version of choice from [releases page](https://github.com/Mohsens22/WSLackware/releases), then from assets download `WSLackware_xx.x.xx.x.Appx.zip`, then extract it, from the extracted files right click on `Install.ps1` and select *Run with Powershell*. Wait a few seconds, it will install.
 
 You can also use [Windows Device Portal](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal) or [App Installer to](https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1) install this package.
 
-### Method 2 (advanced)
+### Method 2 (WSL Import)
 
 Go to your version of choice from [releases page](https://github.com/Mohsens22/WSLackware/releases), then from assets download `install.tar.gz`, then open a windows terminal,cmd or powershell in this directory and type `wsl.exe --import <DistributionName> <InstallLocation> <FileName>`, where:
 
@@ -38,7 +40,7 @@ example: `wsl.exe --import WSlackware c:\WSlackware .\install.tar.gz`
 
 Wait a few seconds, it will install.
 
-> Note: [With this technique](https://docs.microsoft.com/en-us/windows/wsl/reference) you can install many instanced of the same distro.
+> Note: [With this technique](https://docs.microsoft.com/en-us/windows/wsl/reference) you can install many instances of the same distro.
 
 ### After installation
 
@@ -46,7 +48,7 @@ After installation, in the first run it will configure and setup your WSL just l
 
 ## About
 
-We brought Slackware to Windows because be believed that it's the perfect distro for WSL. Firstly because of the simplicity of the init system and the whole OS in general and high-performance binaries it contains; and we hope one day this project gets supported by official Slackware developers.
+We brought Slackware to Windows because be believed that it's the perfect distro for WSL. Firstly because of the simplicity of the init system and the whole OS in general and high-performance binaries it contains, Slackware works perfectly in older devices or virtual machine; and we hope one day this project gets supported by official Slackware developers.
 
 ### Credits
 
