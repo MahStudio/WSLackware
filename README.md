@@ -56,7 +56,7 @@ We brought Slackware to Windows because be believed that it's the perfect distro
 - Microsoft for WSL and distro launcher
 - PNGEgg for the Logo
 
-#### Contrubutors
+#### Contributors
 
 - [Reza Talebi](https://github.com/Rezat4795) - Distro fine-tuning and integration
 - [Mohsen Seifi](https://github.com/Mohsens22) - Distro launcher and WSL integration
