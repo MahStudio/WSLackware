@@ -7,7 +7,7 @@
 
 # Slackware for Windows Subsystem for Linux (WSL)
 
-WSLackware is an unofficial version of Slackware for Windows Subsystem for Linux on Windows 10 and Windows 10 Server.
+WSLackware is an unofficial version of Slackware for Windows Subsystem for Linux on Windows 10, 11 and Windows Server.
 
 WSLackware comes with almost no major modifications comparing to upstream Slackware and the binaries come directly from official Slackware repositories, however WSLackware it's stripped down a bit and added small tweaks to work well with WSL.
 
