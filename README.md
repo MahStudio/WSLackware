@@ -48,7 +48,7 @@ After installation, in the first run it will configure and setup your WSL just l
 
 ## About
 
-We brought Slackware to Windows because be believed that it's the perfect distro for WSL. Firstly because of the simplicity of the init system and the whole OS in general and high-performance binaries it contains, Slackware works perfectly in older devices or virtual machine; and we hope one day this project gets supported by official Slackware developers.
+We brought Slackware to Windows because we believed that it's the perfect distro for WSL. Firstly because of the simplicity of the init system and the whole OS in general and secondly, because of the high-performance binaries it contains, Slackware works perfectly in older devices or virtual machine; and we hope one day this project gets supported by official Slackware developers.
 
 ### Credits
 
