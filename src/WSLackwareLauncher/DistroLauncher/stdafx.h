@@ -24,6 +24,7 @@
 #include <codecvt>
 #include <string_view>
 #include <vector>
+#include <VersionHelpers.h>
 #include <wslapi.h>
 #include "WslApiLoader.h"
 #include "Helpers.h"

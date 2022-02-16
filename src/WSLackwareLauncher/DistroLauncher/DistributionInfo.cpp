@@ -48,6 +48,45 @@ bool DistributionInfo::CreateUser(std::wstring_view userName)
     return true;
 }
 
+typedef NTSTATUS(WINAPI* RtlGetVersionPtr)(PRTL_OSVERSIONINFOW);
+RTL_OSVERSIONINFOW GetBuild() {
+    HMODULE hMod = ::GetModuleHandleW(L"ntdll.dll");
+    if (hMod) {
+        RtlGetVersionPtr fxPtr = (RtlGetVersionPtr)::GetProcAddress(hMod, "RtlGetVersion");
+        if (fxPtr != nullptr) {
+            RTL_OSVERSIONINFOW rov = { 0 };
+            rov.dwOSVersionInfoSize = sizeof(rov);
+            if (0x00000000 == fxPtr(&rov)) {
+                return rov;
+            }
+        }
+    }
+    RTL_OSVERSIONINFOW rov = { 0 };
+    return rov;
+}
+
+int GetRealOSVersion() {
+    auto VN = GetBuild();
+    if (!IsWindows10OrGreater() && VN.dwBuildNumber >= 22000)
+    {
+        return 11;
+    }
+    /* else if (!IsWindows10OrGreater() && VN.dwBuildNumber < 22000)
+    {
+        return "10";
+    }
+    else
+    {
+        return "client";
+    }
+    */
+    else
+    {
+        return 10;
+    }
+    
+}
+
 ULONG DistributionInfo::QueryUid(std::wstring_view userName)
 {
     // Create a pipe to read the output of the launched process.
@@ -79,7 +118,7 @@ ULONG DistributionInfo::QueryUid(std::wstring_view userName)
                 if (ReadFile(readPipe, buffer, (sizeof(buffer) - 1), &bytesRead, nullptr)) {
                     buffer[bytesRead] = ANSI_NULL;
                     try {
-                        uid = std::stoul(buffer, nullptr, 10);
+                        uid = std::stoul(buffer, nullptr, GetRealOSVersion());
 
                     } catch( ... ) { }
                 }
