@@ -65,7 +65,7 @@ RTL_OSVERSIONINFOW GetBuild() {
     return rov;
 }
 
-int GetRealOSVersion() {
+unsigned short int GetRealOSVersion() {
     auto VN = GetBuild();
     if (!IsWindows10OrGreater() && VN.dwBuildNumber >= 22000)
     {
