@@ -71,21 +71,19 @@ int GetRealOSVersion() {
     {
         return 11;
     }
-    /* else if (!IsWindows10OrGreater() && VN.dwBuildNumber < 22000)
-    {
-        return "10";
-    }
-    else
-    {
-        return "client";
-    }
-    */
+
     else
     {
         return 10;
     }
     
 }
+
+/* Now this function should be on it's place, as I don't know where to
+edit "for windows 10" (neofetch of intro), this won't harm the code,
+after we find it, you can safely add this function. */
+
+//GetRealOSVersion();
 
 ULONG DistributionInfo::QueryUid(std::wstring_view userName)
 {
@@ -118,7 +116,7 @@ ULONG DistributionInfo::QueryUid(std::wstring_view userName)
                 if (ReadFile(readPipe, buffer, (sizeof(buffer) - 1), &bytesRead, nullptr)) {
                     buffer[bytesRead] = ANSI_NULL;
                     try {
-                        uid = std::stoul(buffer, nullptr, GetRealOSVersion());
+                        uid = std::stoul(buffer, nullptr, 10);
 
                     } catch( ... ) { }
                 }
