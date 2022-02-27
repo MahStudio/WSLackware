@@ -11,16 +11,21 @@ WSLackware is an unofficial version of Slackware for Windows Subsystem for Linux
 
 WSLackware comes with almost no major modifications comparing to upstream Slackware and the binaries come directly from official Slackware repositories, however WSLackware it's stripped down a bit and added small tweaks to work well with WSL.
 
-> WSLackware is NOT maintained and indorsed by official Slackware developers (yet) and it's supported on a community-based basis. 
+We also provide a custom kernel for WSLackware (For WSL2 only):
+<https://github.com/RezaT4795/WSLackware-kernel>
+
+> WSLackware is NOT maintained and indorsed by official Slackware developers (yet) and it's supported on a community-based basis.
 
 ## Installation
 
 You could use wither of this methods to install this distro on your Windows device, but first make sure:
+
 - [WSL is configured for your Windows 10 device](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 
 ### Method 1 (App installation)
 
 Make sure:
+
 - Developer mode is on. For that, Go to Settings / Update and Security / For Developers -> Developer mode, then toggle it on.
 - Powershell scripts can be executed on your device. For that, Go to Settings / Update and Security / For Developers -> Powershell, select everything and apply.
 
@@ -58,7 +63,7 @@ We brought Slackware to Windows because we believed that it's the perfect distro
 
 #### Contributors
 
-- [Reza Talebi](https://github.com/Rezat4795) - Distro fine-tuning and integration
+- [Reza Talebi](https://github.com/Rezat4795) - Distro fine-tuning, integration and kernel customization
 - [Mohsen Seifi](https://github.com/Mohsens22) - Distro launcher and WSL integration
 
 ### Contributing
