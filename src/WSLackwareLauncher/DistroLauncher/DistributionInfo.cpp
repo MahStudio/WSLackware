@@ -34,8 +34,8 @@ bool DistributionInfo::CreateUser(std::wstring_view userName)
         g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
         return false;
     }
-    //set password
-    commandLine = L"cp /tmp/.bashrc /home/";
+    //create the bash profile for the user
+    commandLine = L"mv /tmp/.bashrc /home/";
     commandLine += userName;
     commandLine += L"/.profile";
     hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
