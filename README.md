@@ -43,7 +43,7 @@ Go to your version of choice from [releases page](https://github.com/Mohsens22/W
 
 example: `wsl.exe --import WSlackware c:\WSlackware .\install.tar.gz`
 
-Wait a few seconds, it will install.
+Wait a few minutes, it will install.
 
 > Note: [With this technique](https://docs.microsoft.com/en-us/windows/wsl/reference) you can install many instances of the same distro.
 
