@@ -176,3 +176,13 @@
 //
 #define MSG_INSTALL_ALREADY_EXISTS       0x000003F5L
 
+//
+// MessageId: MSG_ENABLE_VIRTUALIZATION
+//
+// MessageText:
+//
+// Please enable the Virtual Machine Platform Windows feature and ensure virtualization is enabled in the BIOS.
+// For information please visit https://aka.ms/enablevirtualization
+//
+#define MSG_ENABLE_VIRTUALIZATION        0x000003F6L
+

@@ -50,10 +50,7 @@ HRESULT InstallDistribution(bool createUser)
         if (FAILED(hr)) {
             return hr;
         }
-
     }
-
-   
 
     return hr;
 }
@@ -75,7 +72,7 @@ HRESULT SetDefaultUser(std::wstring_view userName)
     return hr;
 }
 
-int wmain(int argc, wchar_t const *argv[])
+int wmain(int argc, wchar_t const* argv[])
 {
     // Update the title bar of the console window.
     SetConsoleTitleW(DistributionInfo::WindowTitle.c_str());
@@ -110,7 +107,8 @@ int wmain(int argc, wchar_t const *argv[])
                 Helpers::PrintMessage(MSG_INSTALL_ALREADY_EXISTS);
             }
 
-        } else {
+        }
+        else {
             Helpers::PrintMessage(MSG_INSTALL_SUCCESS);
         }
 
@@ -128,8 +126,9 @@ int wmain(int argc, wchar_t const *argv[])
                 Helpers::PromptForInput();
             }
 
-        } else if ((arguments[0] == ARG_RUN) ||
-                   (arguments[0] == ARG_RUN_C)) {
+        }
+        else if ((arguments[0] == ARG_RUN) ||
+            (arguments[0] == ARG_RUN_C)) {
 
             std::wstring command;
             for (size_t index = 1; index < arguments.size(); index += 1) {
@@ -139,7 +138,8 @@ int wmain(int argc, wchar_t const *argv[])
 
             hr = g_wslApi.WslLaunchInteractive(command.c_str(), true, &exitCode);
 
-        } else if (arguments[0] == ARG_CONFIG) {
+        }
+        else if (arguments[0] == ARG_CONFIG) {
             hr = E_INVALIDARG;
             if (arguments.size() == 3) {
                 if (arguments[1] == ARG_CONFIG_DEFAULT_USER) {
@@ -151,7 +151,8 @@ int wmain(int argc, wchar_t const *argv[])
                 exitCode = 0;
             }
 
-        } else {
+        }
+        else {
             Helpers::PrintMessage(MSG_USAGE);
             return exitCode;
         }
@@ -162,7 +163,12 @@ int wmain(int argc, wchar_t const *argv[])
         if (hr == HRESULT_FROM_WIN32(ERROR_LINUX_SUBSYSTEM_NOT_PRESENT)) {
             Helpers::PrintMessage(MSG_MISSING_OPTIONAL_COMPONENT);
 
-        } else {
+        }
+        else if (hr == HCS_E_HYPERV_NOT_INSTALLED) {
+            Helpers::PrintMessage(MSG_ENABLE_VIRTUALIZATION);
+
+        }
+        else {
             Helpers::PrintErrorMessage(hr);
         }
 
