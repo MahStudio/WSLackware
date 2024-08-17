@@ -1,40 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" IgnorableNamespaces="uap mp uap2 uap3 rescap desktop">
-  <Identity Name="45104MAHStudio.326293130CAC8" Version="15.0.30.0" Publisher="CN=44988219-A722-4FA5-9335-1E47D73A1418" ProcessorArchitecture="x64" />
-  <mp:PhoneIdentity PhoneProductId="926251fa-cae3-4d8a-af56-a17b3c70fae9" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
-  <Properties>
-    <DisplayName>WSLackware</DisplayName>
-    <PublisherDisplayName>MAH Studio</PublisherDisplayName>
-    <Logo>Assets\Tiles\StoreLogo.png</Logo>
-  </Properties>
-  <Dependencies>
-    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.18362.0" MaxVersionTested="10.0.19041.0" />
-  </Dependencies>
-  <Capabilities>
-    <rescap:Capability Name="runFullTrust" />
-  </Capabilities>
-  <Resources>
-    <Resource Language="x-generate" />
-  </Resources>
-  <Applications>
-    <Application Id="WSLackware" Executable="WSLackware.exe" EntryPoint="Windows.FullTrustApplication">
-      <uap:VisualElements DisplayName="WSLackware" Square150x150Logo="Assets\Tiles\Square150x150Logo.png" Square44x44Logo="Assets\Tiles\Square44x44Logo.png" BackgroundColor="transparent" Description="Slackware for Windows">
-        <uap:DefaultTile Wide310x150Logo="Assets\Tiles\Wide310x150Logo.png" Square310x310Logo="Assets\Tiles\LargeTile.png" Square71x71Logo="Assets\Tiles\SmallTile.png" ShortName="WSLackware">
-          <uap:ShowNameOnTiles>
-            <uap:ShowOn Tile="square150x150Logo"/>
-            <uap:ShowOn Tile="wide310x150Logo"/>
-            <uap:ShowOn Tile="square310x310Logo"/>
-          </uap:ShowNameOnTiles>
-        </uap:DefaultTile>
-        <uap:SplashScreen Image="Assets\Tiles\SplashScreen.png" />
-      </uap:VisualElements>
-      <Extensions>
-        <uap3:Extension Category="windows.appExecutionAlias" Executable="WSLackware.exe" EntryPoint="Windows.FullTrustApplication">
-          <uap3:AppExecutionAlias>
-            <desktop:ExecutionAlias Alias="WSLackware.exe" />
-          </uap3:AppExecutionAlias>
-        </uap3:Extension>
-      </Extensions>
-    </Application>
-  </Applications>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+         xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+         xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2"
+         xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+         xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+         xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+         IgnorableNamespaces="uap mp uap2 uap3 desktop rescap">
+	<Identity Name="45104MAHStudio.326293130CAC8" Version="15.0.30.0" Publisher="CN=44988219-A722-4FA5-9335-1E47D73A1418" ProcessorArchitecture="x64" />
+	<mp:PhoneIdentity PhoneProductId="926251fa-cae3-4d8a-af56-a17b3c70fae9" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+	<Properties>
+		<DisplayName>WSLackware</DisplayName>
+		<PublisherDisplayName>MAH Studio</PublisherDisplayName>
+		<Logo>Assets\Tiles\StoreLogo.png</Logo>
+	</Properties>
+	<Dependencies>
+		<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.18362.0" MaxVersionTested="10.0.19041.0" />
+	</Dependencies>
+	<Capabilities>
+		<rescap:Capability Name="runFullTrust" />
+	</Capabilities>
+	<Resources>
+		<Resource Language="x-generate" />
+	</Resources>
+	<Applications>
+		<Application Id="WSLackware" Executable="WSLackware.exe" EntryPoint="Windows.FullTrustApplication">
+			<uap:VisualElements DisplayName="WSLackware"
+                          Square150x150Logo="Assets\Tiles\Square150x150Logo.png"
+                          Square44x44Logo="Assets\Tiles\Square44x44Logo.png"
+                          BackgroundColor="transparent"
+                          Description="Slackware for Windows">
+				<uap:DefaultTile Wide310x150Logo="Assets\Tiles\Wide310x150Logo.png"
+                         Square310x310Logo="Assets\Tiles\LargeTile.png"
+                         Square71x71Logo="Assets\Tiles\SmallTile.png"
+                         ShortName="WSLackware">
+					<uap:ShowNameOnTiles>
+						<uap:ShowOn Tile="square150x150Logo"/>
+						<uap:ShowOn Tile="wide310x150Logo"/>
+						<uap:ShowOn Tile="square310x310Logo"/>
+					</uap:ShowNameOnTiles>
+				</uap:DefaultTile>
+				<uap:SplashScreen Image="Assets\Tiles\SplashScreen.png" />
+			</uap:VisualElements>
+			<Extensions>
+				<uap3:Extension Category="windows.appExecutionAlias"
+                        Executable="WSLackware.exe"
+                        EntryPoint="Windows.FullTrustApplication">
+					<uap3:AppExecutionAlias>
+						<desktop:ExecutionAlias Alias="WSLackware.exe" />
+					</uap3:AppExecutionAlias>
+				</uap3:Extension>
+			</Extensions>
+		</Application>
+	</Applications>
 </Package>
