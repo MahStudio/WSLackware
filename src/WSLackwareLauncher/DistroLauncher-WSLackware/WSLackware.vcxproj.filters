@@ -6,12 +6,13 @@
     <CustomBuild Include="$(targetname)" />
     <CustomBuild Include="$(targetname)" />
     <CustomBuild Include="$(targetname)" />
+    <CustomBuild Include="$(targetname)" />
+    <CustomBuild Include="$(targetname)" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="WSLackware.appxmanifest" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="WSLackware_StoreKey.pfx" />
     <None Include="WSLackware_TemporaryKey.pfx" />
     <None Include="..\x64\install.tar.gz" />
     <None Include="Package.StoreAssociation.xml" />

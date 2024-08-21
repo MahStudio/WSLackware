@@ -96,7 +96,6 @@
     <AppxManifest Include="WSLackware.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="WSLackware_StoreKey.pfx" />
     <None Include="WSLackware_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup Condition="'$(Platform)'=='x64'">
