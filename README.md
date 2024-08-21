@@ -22,7 +22,11 @@ You could use wither of this methods to install this distro on your Windows devi
 
 - [WSL is configured for your Windows 10 device](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 
-### Method 1 (App installation)
+### Method 1 (Install from Microsoft Store)
+
+You can download and install the latest version of WSLackware from Microsoft Store. [Download link](https://apps.microsoft.com/detail/9n8wpjwz4jx7)
+
+### Method 2 (Appx installation)
 
 Make sure:
 
@@ -33,7 +37,7 @@ Go to your version of choice from [releases page](https://github.com/Mohsens22/W
 
 You can also use [Windows Device Portal](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal) or [App Installer to](https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1) install this package.
 
-### Method 2 (WSL Import)
+### Method 3 (WSL Import)
 
 Go to your version of choice from [releases page](https://github.com/Mohsens22/WSLackware/releases), then from assets download `install.tar.gz`, then open a windows terminal,cmd or powershell in this directory and type `wsl.exe --import <DistributionName> <InstallLocation> <FileName>`, where:
 
@@ -44,8 +48,6 @@ Go to your version of choice from [releases page](https://github.com/Mohsens22/W
 example: `wsl.exe --import WSlackware c:\WSlackware .\install.tar.gz`
 
 Wait a few minutes, it will install.
-
-> Note: [With this technique](https://docs.microsoft.com/en-us/windows/wsl/reference) you can install many instances of the same distro.
 
 ### After installation
 
